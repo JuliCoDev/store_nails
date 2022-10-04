@@ -7,10 +7,10 @@ const MainRoutes = () => {
             <Menu/>
             <Routes>
                 {
-                    routes.map(route =>{                        
+                    routes.map((route , index) =>{                        
                         const {element , path} = route;
                         return(
-                            <Route element={element}  path={path}/>
+                            <Route key={index} element={element}  path={path}/>
                         )
                     })
                 }
