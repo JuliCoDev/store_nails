@@ -1,5 +1,6 @@
-import {Banner , InfoBanner} from "../styles-components/Banner"
-import {OurServices} from "./OurServices";
+import {Banner , InfoBanner} from "../../styles-components/Banner"
+import Gallery from "../Gallery/Gallery";
+import {ProductsCategory} from "../Products/ProductsCategory";
 
 const Home = () =>{
     return(
@@ -10,7 +11,8 @@ const Home = () =>{
                     Buscamos ofrecerte un espacio de tranquilidad y relajación en medio de la ciudad.
                 </InfoBanner>
             </Banner>
-            <OurServices/>
+            <ProductsCategory/>
+            <Gallery/>
         </div>
         
     )

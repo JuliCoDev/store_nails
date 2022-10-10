@@ -20,6 +20,7 @@ export const InfoBanner = styled.div`
     h2{
         margin-bottom: 10px;
         text-align: center;
+        color: white;
     }
 `;
 
