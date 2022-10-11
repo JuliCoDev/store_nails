@@ -1,4 +1,4 @@
-import { database } from '../services/connectionFirebase';
+import { database } from '../services/config/connectionFirebase';
 import { ref, onValue, query, limitToLast, orderByChild, equalTo} from 'firebase/database';
 import { useEffect, useState } from "react";
 

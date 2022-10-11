@@ -1,5 +1,12 @@
-import { storage } from "../services/connectionFirebase"
+export const useGetItemStorage = (key) => {
+    let itemsStorage = (JSON.parse(localStorage.getItem(key))) ? JSON.parse(localStorage.getItem(key)): [];
+    return itemsStorage;
+}
 
-export const useListStorage = (folder)  => {
-    gs://storenails-31022.appspot.com/gallery
+
+export const useCreateItemStorage = (key, value) => {
+    let itemsStorage = (JSON.parse(localStorage.setItem(key, value))) ?
+                        JSON.parse(localStorage.setItem(key, value)): 
+                        [];
+    return itemsStorage;
 }

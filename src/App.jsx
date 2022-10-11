@@ -1,9 +1,11 @@
 import './App.css';
 import MainRoutes from './routes/MainRoutes';
-
+import LoginProvider from './context/LoginContext';
 function App() {
   return (
-  <MainRoutes/>
+    <LoginProvider>
+      <MainRoutes/>
+    </LoginProvider>
   );
 }
 
