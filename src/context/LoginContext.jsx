@@ -4,8 +4,7 @@ import { useGetItemStorage } from "../hooks/useStorage";
 export const LoginContext = createContext('');
 
 const reducer = (state, action) => {
-    const {value , type } = action;
-    console.log(value.email)
+    const {type } = action;
     switch (type){
         case "LOGIN":
             //The new state is the session of user

@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { Input } from "../../components/Input/Input"
 import { LoginContext } from "../../context/LoginContext"
 import { Container } from "../../styles-components/Container"
@@ -7,12 +7,14 @@ import  '../../styles-components/css/Message.css'
 import { H2 } from "../../styles-components/Title"
 import { useState } from "react"
 import { User } from "../../services/User"
+import { useNavigate } from "react-router-dom"
 
 
 
 const SignIn = () =>{
 
     const session = useContext(LoginContext);
+    const navigate = useNavigate();
     
     //Values Inputs
     const [data, setData] = useState({
@@ -21,6 +23,12 @@ const SignIn = () =>{
     });
 
     const [messageError , setMessageError] = useState(null);
+
+    useEffect(() => {
+        if (session.user.session.uid) {
+          navigate("/");
+        }
+      }, []);
 
 
     const handleLogin = (e) =>{
@@ -34,7 +42,7 @@ const SignIn = () =>{
                     email : userCredential.user.email
                 };
                 window.sessionStorage.setItem('session', JSON.stringify(user));
-               
+                console.log(session);
             })
             .catch(() => {
                 setMessageError('Usuarioi y/o contraseña incorrectos');
@@ -43,6 +51,7 @@ const SignIn = () =>{
         session.dispatch({type : 'LOGIN' , value : {email: data.email , password: data.password}})
 
     } 
+
 
     
 
